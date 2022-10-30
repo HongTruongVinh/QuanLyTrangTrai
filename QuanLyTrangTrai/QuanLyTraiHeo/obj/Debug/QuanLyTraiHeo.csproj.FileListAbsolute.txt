@@ -27,7 +27,6 @@ C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\Quan
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý báo cáo\BaoCaoSuaChuaWindow.g.cs
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý báo cáo\BaoCaoThuChiWindow.g.cs
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý báo cáo\BaoCaoTinhTrangDanHeoWindow.g.cs
-C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý đàn heo\LapLichWindow.g.cs
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý kho\LapPhieuKhoWindow.g.cs
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý chuồng nuôi\LapPhieuSuaChuaWindow.g.cs
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý kho\QuanLyHangHoaWindow.g.cs
@@ -53,7 +52,6 @@ C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\Quan
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý báo cáo\BaoCaoSuaChuaWindow.baml
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý báo cáo\BaoCaoThuChiWindow.baml
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý báo cáo\BaoCaoTinhTrangDanHeoWindow.baml
-C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý đàn heo\LapLichWindow.baml
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý kho\LapPhieuKhoWindow.baml
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý chuồng nuôi\LapPhieuSuaChuaWindow.baml
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý kho\QuanLyHangHoaWindow.baml
@@ -73,3 +71,15 @@ C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\Quan
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\QuanLyTraiHeo.csproj.CopyComplete
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\QuanLyTraiHeo.exe
 C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\QuanLyTraiHeo.pdb
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Lập lịch\LapLichPhoiGiong.g.cs
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Lập lịch\LapLichTiem.g.cs
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Tạo thông báo\TaoThongBaoWindow.g.cs
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Lập lịch\LapLichPhoiGiong.baml
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Lập lịch\LapLichTiem.baml
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Tạo thông báo\TaoThongBaoWindow.baml
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý đàn heo\PhieuNhapBanHeo.g.cs
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý đàn heo\PhieuNhapBanHeo.baml
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quanlyloaiheo.g.cs
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý giống heo\Quanlygiongheo.g.cs
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quanlyloaiheo.baml
+C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\View\Windows\Quản lý giống heo\Quanlygiongheo.baml

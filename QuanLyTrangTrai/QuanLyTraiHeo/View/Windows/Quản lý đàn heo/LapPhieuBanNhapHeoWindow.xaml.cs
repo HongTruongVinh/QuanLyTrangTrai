@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyTraiHeo.View.Windows.Quản_lý_đàn_heo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace QuanLyTraiHeo
             InitializeComponent();
             Listview.Items.Add("abc");
             Listview.Items.Add("cde");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PhieuNhapBanHeo wc = new PhieuNhapBanHeo();
+            wc.ShowDialog();
         }
     }
 }

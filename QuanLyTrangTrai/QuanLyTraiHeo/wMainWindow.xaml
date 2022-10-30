@@ -14,7 +14,9 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="MainWindow"
+        WindowState="Maximized"
+        Icon="/Image/leaves_icon.png"
+        Title="Phần mềm quản lý trang trại PigFarm"
         Height="768"
         Width="1024"
         Name="MainWindow"
@@ -84,6 +86,24 @@
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
                                 </TreeViewItem>
+                                <TreeViewItem Name="Tree_menu_detail_Loaiheo"
+                                    Header="Quản lý loại heo">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Selected">
+                                            <i:InvokeCommandAction Command="{Binding OpenQuanLyLoaiHeo}"
+                                                        CommandParameter="{Binding ElementName=grb_TabWindow}"></i:InvokeCommandAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TreeViewItem>
+                                <TreeViewItem Name="Tree_menu_detail_Giongheo"
+                                    Header="Quản lý giống heo">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Selected">
+                                            <i:InvokeCommandAction Command="{Binding OpenQuanLyGiongHeo}"
+                                                        CommandParameter="{Binding ElementName=grb_TabWindow}"></i:InvokeCommandAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TreeViewItem>
                                 <TreeViewItem Name="Tree_menu_detail_PhieuHeo"
                                         Header="Lập phiếu bán/nhập heo">
                                     <i:Interaction.Triggers>
@@ -95,12 +115,24 @@
                                 </TreeViewItem>
                                 <TreeViewItem Name="Tree_menu_detail_LapLich"
                                         Header="Lập lịch" >
-                                    <i:Interaction.Triggers>
-                                        <i:EventTrigger EventName="Selected">
-                                            <i:InvokeCommandAction Command="{Binding OpenLapLichWindow}"
+                                    <TreeViewItem Name="Tree_menu_detail_Laplichtiem"
+                                                  Header="Lập lịch tiêm">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Selected">
+                                                <i:InvokeCommandAction Command="{Binding OpenLapLichTiemWindow}"
                                                         CommandParameter="{Binding ElementName=grb_TabWindow}"></i:InvokeCommandAction>
-                                        </i:EventTrigger>
-                                    </i:Interaction.Triggers>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </TreeViewItem>
+                                    <TreeViewItem Name="Tree_menu_detail_Laplichphoigiong"
+                                                  Header="Lập lịch phối giống">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Selected">
+                                                <i:InvokeCommandAction Command="{Binding OpenLaplichPhoiGiongWindow}"
+                                                        CommandParameter="{Binding ElementName=grb_TabWindow}"></i:InvokeCommandAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </TreeViewItem>
                                 </TreeViewItem>
 
 
@@ -375,19 +407,48 @@
                     <materialDesign:ColorZone DockPanel.Dock="Top" Mode="PrimaryMid" Padding="16" Background="#3ab19b">
                         <DockPanel>
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
-                                <Button 
-                        Style="{StaticResource MaterialDesignToolForegroundButton}"
-                        Margin="8 0 8 0"
-                        ToolTip="Xem thông báo"
-                        Panel.ZIndex="0">
+                                <materialDesign:Badged Margin="8 0 8 0" VerticalAlignment="Center"
+                                        Badge="2" BadgeBackground="Red" BadgeForeground="White">
+                                    <materialDesign:PopupBox Foreground="White"
+                                                StaysOpen="True" 
+                                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                                >
+                                        <materialDesign:PopupBox.ToggleContent>
+                                            <materialDesign:PackIcon Kind="BellRing" Foreground="White" Width="20" Height="20">
+                                            </materialDesign:PackIcon>
+                                        </materialDesign:PopupBox.ToggleContent>
+                                        <StackPanel Width="450">
+                                            <Button>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBlock FontWeight="Bold" TextWrapping="Wrap">Nhận lương cuối tháng</TextBlock>
+                                                    <TextBlock FontStyle="Italic" FontSize="10">Ngày 18/10/2022</TextBlock>
+                                                    <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">Tất cả nhân viên sẽ nhận lương tại phòng kế toán vào ngày 18/10/2022</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBlock FontWeight="Bold" TextWrapping="Wrap">Training về giống heo mới</TextBlock>
+                                                    <TextBlock FontStyle="Italic" FontSize="10">Ngày 19/10/2022</TextBlock>
+                                                    <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">Nhân viên chăm sóc heo ở tất cả các bộ phận(phối giống/ chăm sóc heo mẹ/ chăm sóc heo con và heo cai sữa) đều phải có mặt để chuyên gia training về đặc tính và các chăm sóc giống heo mới vào ngày 19/10/2022. Lưu ý: nhân viên không có mặt sẽ bị trừ 10% lương tháng này.</TextBlock>
+                                                </StackPanel>
+                                            </Button>
+
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </materialDesign:Badged>
+                                <Button
+                                    Foreground="White"
+                                        Style="{StaticResource MaterialDesignIconButton}"
+                                        ToolTip="Tạo thông báo mới"
+                                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="btn_TaoThongBao_Click">
                                     <materialDesign:PackIcon
-                            Kind="BellRing" />
+                                                Kind="MessagePlusOutline" />
                                 </Button>
                                 <Rectangle Margin="8,0,8,0" HorizontalAlignment="Stretch" Fill="White" Width="2"/>
                                 <Button
-                        Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-                        ToolTip="TendouHakai"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                    ToolTip="TendouHakai"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
                                     <Image Source="/Image/avatar.jpg"/>
                                 </Button>
                                 <TextBlock

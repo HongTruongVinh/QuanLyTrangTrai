@@ -64,6 +64,8 @@ namespace QuanLyTraiHeo
         {
             CollapsedMenuDtail();
             Tree_menu_detail_CaThe.Visibility = Visibility.Visible;
+            Tree_menu_detail_Loaiheo.Visibility = Visibility.Visible;
+            Tree_menu_detail_Giongheo.Visibility = Visibility.Visible;
             Tree_menu_detail_PhieuHeo.Visibility = Visibility.Visible;  
             Tree_menu_detail_LapLich.Visibility = Visibility.Visible;
             exp_test.IsExpanded = true;
@@ -174,6 +176,12 @@ namespace QuanLyTraiHeo
         private void btn_DoiMatKhau_Click(object sender, RoutedEventArgs e)
         {
             DoiMatKhau wc = new DoiMatKhau();
+            wc.ShowDialog();
+        }
+
+        private void btn_TaoThongBao_Click(object sender, RoutedEventArgs e)
+        {
+            TaoThongBaoWindow wc = new TaoThongBaoWindow();
             wc.ShowDialog();
         }
     }

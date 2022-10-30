@@ -1,4 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
+using QuanLyTraiHeo.View.Windows;
+using QuanLyTraiHeo.View.Windows.Lập_lịch;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,8 +26,11 @@ namespace QuanLyTraiHeo.ViewModel
         #region CommandOpenWindow
         public ICommand OpenTrangChuWindow { get; set; }
         public ICommand OpenQuanLyThongTinCaTheWindow { get; set; }
+        public ICommand OpenQuanLyLoaiHeo { get; set; }
+        public ICommand OpenQuanLyGiongHeo { get; set; }
         public ICommand OpenLapPhieuBanNhapHeoWIndow { get; set; }
-        public ICommand OpenLapLichWindow { get; set; } 
+        public ICommand OpenLapLichTiemWindow { get; set; }
+        public ICommand OpenLaplichPhoiGiongWindow { get; set; }
         public ICommand OpenQuanLyThongTinChuongWindow { get; set; }
         public ICommand OpenLapPhieuSuaChuaWindow { get; set; }
         public ICommand OpenQuanLyHangHoaTrongKhoWindow { get; set; }
@@ -83,6 +88,24 @@ namespace QuanLyTraiHeo.ViewModel
                 p.Children.Add(content as UIElement);
                 currentWindow = "Quản lý thông tin cá thể";
             });
+            OpenQuanLyLoaiHeo = new RelayCommand<Grid>((p) => { return true; }, p => {
+                Quanlyloaiheo wc = new Quanlyloaiheo();
+                wc.Close();
+                Object content = wc.Content;
+                wc.Content = null;
+                p.Children.Clear();
+                p.Children.Add(content as UIElement);
+                currentWindow = "Quản lý thông tin loại heo";
+            });
+            OpenQuanLyGiongHeo = new RelayCommand<Grid>((p) => { return true; }, p => {
+                Quanlygiongheo wc = new Quanlygiongheo();
+                wc.Close();
+                Object content = wc.Content;
+                wc.Content = null;
+                p.Children.Clear();
+                p.Children.Add(content as UIElement);
+                currentWindow = "Quản lý thông tin giống heo";
+            });
             OpenLapPhieuBanNhapHeoWIndow = new RelayCommand<Grid>((p) => { return true; }, p => {
                 LapPhieuBanNhapHeoWindow wc = new LapPhieuBanNhapHeoWindow();
                 wc.Close();
@@ -92,14 +115,23 @@ namespace QuanLyTraiHeo.ViewModel
                 p.Children.Add(content as UIElement);
                 currentWindow = "Lập phiếu bán/nhập heo";
             });
-            OpenLapLichWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
-                LapLichWindow wc = new LapLichWindow();
+            OpenLapLichTiemWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
+                LapLichTiem wc = new LapLichTiem();
                 wc.Close();
                 Object content = wc.Content;
                 wc.Content = null;
                 p.Children.Clear();
                 p.Children.Add(content as UIElement);
-                currentWindow = "Lập lịch tiêm/phối giống heo";
+                currentWindow = "Lập lịch tiêm heo";
+            });
+            OpenLaplichPhoiGiongWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
+                LapLichPhoiGiong wc = new LapLichPhoiGiong();
+                wc.Close();
+                Object content = wc.Content;
+                wc.Content = null;
+                p.Children.Clear();
+                p.Children.Add(content as UIElement);
+                currentWindow = "Lập lịch phối giống heo";
             });
             OpenQuanLyThongTinChuongWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
                 QuanLyThongTinChuong wc = new QuanLyThongTinChuong();
@@ -109,15 +141,6 @@ namespace QuanLyTraiHeo.ViewModel
                 p.Children.Clear();
                 p.Children.Add(content as UIElement);
                 currentWindow = "Quản lý thông tin chuồng nuôi";
-            });
-            OpenLapPhieuSuaChuaWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
-                LapLichWindow wc = new LapLichWindow();
-                wc.Close();
-                Object content = wc.Content;
-                wc.Content = null;
-                p.Children.Clear();
-                p.Children.Add(content as UIElement);
-                currentWindow = "Lập phiếu sửa chữa";
             });
             OpenQuanLyHangHoaTrongKhoWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
                 QuanLyHangHoaWindow wc = new QuanLyHangHoaWindow();

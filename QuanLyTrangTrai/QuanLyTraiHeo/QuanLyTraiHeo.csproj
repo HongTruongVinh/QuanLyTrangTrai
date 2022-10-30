@@ -78,6 +78,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\CapNhatTaiKhoanVM.cs" />
+    <Compile Include="View\Windows\Lập lịch\LapLichPhoiGiong.xaml.cs">
+      <DependentUpon>LapLichPhoiGiong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Lập lịch\LapLichTiem.xaml.cs">
+      <DependentUpon>LapLichTiem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Quanlyloaiheo.xaml.cs">
+      <DependentUpon>Quanlyloaiheo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Quản lý giống heo\Quanlygiongheo.xaml.cs">
+      <DependentUpon>Quanlygiongheo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Quản lý đàn heo\PhieuNhapBanHeo.xaml.cs">
+      <DependentUpon>PhieuNhapBanHeo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\Quản lý đàn heo\ThemSuaTTHeo.xaml.cs">
       <DependentUpon>ThemSuaTTHeo.xaml</DependentUpon>
     </Compile>
@@ -105,9 +120,6 @@
     </Compile>
     <Compile Include="View\Windows\Quản lý báo cáo\BaoCaoTinhTrangDanHeoWindow.xaml.cs">
       <DependentUpon>BaoCaoTinhTrangDanHeoWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Windows\Quản lý đàn heo\LapLichWindow.xaml.cs">
-      <DependentUpon>LapLichWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Quản lý kho\LapPhieuKhoWindow.xaml.cs">
       <DependentUpon>LapPhieuKhoWindow.xaml</DependentUpon>
@@ -139,6 +151,9 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="View\Windows\Tạo thông báo\TaoThongBaoWindow.xaml.cs">
+      <DependentUpon>TaoThongBaoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\wLogin.xaml.cs">
       <DependentUpon>wLogin.xaml</DependentUpon>
     </Compile>
@@ -147,6 +162,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\DoiMatKhau.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Lập lịch\LapLichPhoiGiong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Lập lịch\LapLichTiem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Quanlyloaiheo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Quản lý giống heo\Quanlygiongheo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Quản lý đàn heo\PhieuNhapBanHeo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,10 +210,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\Quản lý báo cáo\BaoCaoTinhTrangDanHeoWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Windows\Quản lý đàn heo\LapLichWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\Trang chủ\TrangChuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Tạo thông báo\TaoThongBaoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -269,6 +304,7 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="View\UC\" />
+    <Folder Include="View\Windows\Quản lý loại heo\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\leaves_icon.png" />

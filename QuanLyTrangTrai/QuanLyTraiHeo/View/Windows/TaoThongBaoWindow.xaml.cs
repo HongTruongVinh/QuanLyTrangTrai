@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyTraiHeo
+namespace QuanLyTraiHeo.View.Windows
 {
     /// <summary>
-    /// Interaction logic for LapLichWindow.xaml
+    /// Interaction logic for TaoThongBaoWindow.xaml
     /// </summary>
-    public partial class LapLichWindow : Window
+    public partial class TaoThongBaoWindow : Window
     {
-        public LapLichWindow()
+        public TaoThongBaoWindow()
         {
             InitializeComponent();
         }
