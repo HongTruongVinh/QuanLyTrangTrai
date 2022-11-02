@@ -13,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MessageBox = System.Windows.MessageBox;
+using System.Text.RegularExpressions;
 
 namespace QuanLyTraiHeo.View.Windows
 {
@@ -27,17 +27,33 @@ namespace QuanLyTraiHeo.View.Windows
             InitializeComponent();
         }
 
-        private void btn_Huybo_Click(object sender, RoutedEventArgs e)
+        #region Chỉ cho TextBox SDT và Hệ số lương nhập kí tự số
+        private void tb_HeSoLuong_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            MessageBoxResult dlr = MessageBox.Show("Bạn muốn thoát chương trình?", "Thông báo", MessageBoxButton.YesNo);
-            if (dlr == MessageBoxResult.Yes)
+            if (tb_HeSoLuong.Text.Length > 7) e.Handled = true;
+
+            // Here e.Text is string so we need to convert it into char
+            char ch = e.Text[0];
+
+            if ((Char.IsDigit(ch) || ch == '.'))
             {
-                this.Close();
-                return;
+                //Here TextBox1.Text is name of your TextBox
+                //int SoLuongDauChamChoPhep = tb_HeSoLuong.Text.Count(f => f == '.');
+                if (ch == '.' && tb_HeSoLuong.Text.Contains('.'))
+                    e.Handled = true;
             }
-            return;
+            else
+                e.Handled = true;
         }
+
+        private void tb_SDT_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        #endregion
     }
+
     public class NotEmptyValidationRule : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)

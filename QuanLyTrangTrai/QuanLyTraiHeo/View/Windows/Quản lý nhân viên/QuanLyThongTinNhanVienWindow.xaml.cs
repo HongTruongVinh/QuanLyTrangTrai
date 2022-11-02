@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyTraiHeo.View.Windows.Quản_lý_nhân_viên;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

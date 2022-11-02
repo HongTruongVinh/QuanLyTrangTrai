@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\
+C:\Users\HONG VINH\source\repos\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\obj\Debug\
 QuanLyTraiHeo
 none
 false
 DEBUG;TRACE
-C:\Users\Tran Thanh\Desktop\đồ án SE214\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\App.xaml
-27796343951
+C:\Users\HONG VINH\source\repos\QuanLyTrangTrai\QuanLyTrangTrai\QuanLyTraiHeo\App.xaml
+34-1878343167
 
-36984965753
-211163646710
-View\Windows\CapNhatTaiKhoanWindow.xaml;View\Windows\DoiMatKhau.xaml;View\Windows\Lập lịch\LapLichPhoiGiong.xaml;View\Windows\Lập lịch\LapLichTiem.xaml;View\Windows\Quanlyloaiheo.xaml;View\Windows\Quản lý giống heo\Quanlygiongheo.xaml;View\Windows\Quản lý đàn heo\PhieuNhapBanHeo.xaml;View\Windows\Quản lý đàn heo\ThemSuaTTHeo.xaml;View\Windows\Thiết lập cây mục tiêu\ThietLapCayMucTieuWindow.xaml;View\Windows\Quản lý báo cáo\BaoCaoTonKhoWindow.xaml;View\Windows\Quản lý đàn heo\LapPhieuBanNhapHeoWindow.xaml;View\Windows\Quản lý báo cáo\BaoCaoSuaChuaWindow.xaml;View\Windows\Quản lý báo cáo\BaoCaoThuChiWindow.xaml;View\Windows\Quản lý báo cáo\BaoCaoTinhTrangDanHeoWindow.xaml;View\Windows\Quản lý kho\LapPhieuKhoWindow.xaml;View\Windows\Quản lý chuồng nuôi\LapPhieuSuaChuaWindow.xaml;View\Windows\Quản lý kho\QuanLyHangHoaWindow.xaml;View\Windows\Quản lý nhật ký\QuanLyNhatKyWindow.xaml;View\Windows\Quản lý đàn heo\QuanLyThongTinCaTheWindow.xaml;View\Windows\Quản lý chuồng nuôi\QuanLyThongTinChuong.xaml;View\Windows\Quản lý nhân viên\QuanLyThongTinNhanVienWindow.xaml;View\Windows\Tra cứu phiếu thu chi\TraCuuPhieuThuChiWindow.xaml;View\Windows\Trang chủ\TrangChuWindow.xaml;View\Windows\Tạo thông báo\TaoThongBaoWindow.xaml;wMainWindow.xaml;ResourceXAML\MainResource.xaml;View\Windows\wLogin.xaml;
+43759794939
+211118413398
+View\Windows\CapNhatTaiKhoanWindow.xaml;View\Windows\DoiMatKhau.xaml;View\Windows\Lập lịch\LapLichPhoiGiong.xaml;View\Windows\Lập lịch\LapLichTiem.xaml;View\Windows\Quanlydoitac.xaml;View\Windows\Quản lý chuồng nuôi\LapPhieuSuaChuaWindow.xaml;View\Windows\Quản lý chuồng nuôi\PhieuSuaChua.xaml;View\Windows\Quản lý chuồng nuôi\QuanLyThongTinChuong.xaml;View\Windows\Quản lý chuồng nuôi\SuaChuong.xaml;View\Windows\Quản lý chuồng nuôi\Themchuong.xaml;View\Windows\Quản lý chuồng nuôi\ThongTinChuong.xaml;View\Windows\Quản lý giống heo\Quanlygiongheo.xaml;View\Windows\Quản lý nhân viên\QuanLyThongTinNhanVienWindow.xaml;View\Windows\Quản lý nhân viên\SuaNhanVien.xaml;View\Windows\Quản lý nhân viên\ThemNhanVien.xaml;View\Windows\Quản lý nhật ký\QuanLyNhatKyWindow.xaml;View\Windows\Quản lý đàn heo\PhieuNhapBanHeo.xaml;View\Windows\Quản lý đàn heo\ThemSuaTTHeo.xaml;View\Windows\Quản lý báo cáo\BaoCaoTonKhoWindow.xaml;View\Windows\Quản lý đàn heo\LapPhieuBanNhapHeoWindow.xaml;View\Windows\Quản lý báo cáo\BaoCaoSuaChuaWindow.xaml;View\Windows\Quản lý báo cáo\BaoCaoThuChiWindow.xaml;View\Windows\Quản lý báo cáo\BaoCaoTinhTrangDanHeoWindow.xaml;View\Windows\Quản lý kho\LapPhieuKhoWindow.xaml;View\Windows\Quản lý kho\QuanLyHangHoaWindow.xaml;View\Windows\Quản lý đàn heo\QuanLyThongTinCaTheWindow.xaml;View\Windows\Thiết lập cây mục tiêu\Caymuctieu.xaml;View\Windows\Thiết lập cây mục tiêu\ThietLapCayMucTieuWindow.xaml;View\Windows\Tra cứu phiếu thu chi\TraCuuPhieuThuChiWindow.xaml;View\Windows\Trang chủ\TrangChuWindow.xaml;View\Windows\Tạo thông báo\TaoThongBaoWindow.xaml;wMainWindow.xaml;ResourceXAML\MainResource.xaml;View\Windows\wLogin.xaml;
 
-True
+False
 
