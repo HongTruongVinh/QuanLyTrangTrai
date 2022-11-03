@@ -108,6 +108,15 @@
     <Compile Include="View\Windows\Quản lý giống heo\Quanlygiongheo.xaml.cs">
       <DependentUpon>Quanlygiongheo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\Quản lý kho\TaoPhieuKho.xaml.cs">
+      <DependentUpon>TaoPhieuKho.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Quản lý kho\TaoPhieuKiemKho.xaml.cs">
+      <DependentUpon>TaoPhieuKiemKho.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Quản lý kho\ThongTinHangHoa.xaml.cs">
+      <DependentUpon>ThongTinHangHoa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\Quản lý nhân viên\QuanLyThongTinNhanVienWindow.xaml.cs">
       <DependentUpon>QuanLyThongTinNhanVienWindow.xaml</DependentUpon>
     </Compile>
@@ -223,6 +232,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Windows\Quản lý giống heo\Quanlygiongheo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Quản lý kho\TaoPhieuKho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Quản lý kho\TaoPhieuKiemKho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Quản lý kho\ThongTinHangHoa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
