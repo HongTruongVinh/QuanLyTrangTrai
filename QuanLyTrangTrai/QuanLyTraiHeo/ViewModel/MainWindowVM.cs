@@ -1,8 +1,12 @@
 ﻿using MaterialDesignThemes.Wpf;
+using QuanLyTraiHeo.Model;
 using QuanLyTraiHeo.View.Windows;
-using QuanLyTraiHeo.View.Windows.Lập_lịch;
+using QuanLyTraiHeo.View.Windows.Quản_lý_chức_vụ;
+using QuanLyTraiHeo.View.Windows.Quản_lý_giống_heo;
+using QuanLyTraiHeo.View.Windows.Quản_lý_loại_heo;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -20,17 +24,31 @@ namespace QuanLyTraiHeo.ViewModel
 {
     public class MainWindowVM: BaseViewModel
     {
+        #region Attributes
         public bool IsLoaded = false;
         private string _currentWindow = "";
+        NHANVIEN nhanVien;
+        System.Windows.Media.Imaging.BitmapImage image;
+        private ObservableCollection<ThongBao> _listTHONGBAO;
+        private ThongBao _selectedItem;
+        #endregion
+
+        #region Property
         public string currentWindow { get => _currentWindow; set { _currentWindow = value; OnPropertyChanged(); } }
+        public NHANVIEN NhanVien { get => nhanVien; set { nhanVien = value; OnPropertyChanged(); } }
+        public System.Windows.Media.Imaging.BitmapImage MyImage { get => image; set { image = value; OnPropertyChanged(); } }
+        public ObservableCollection<ThongBao> listTHONGBAO { get => _listTHONGBAO; set { _listTHONGBAO = value; OnPropertyChanged(); } }
+        public ThongBao selectedItem { get => _selectedItem; set { _selectedItem = value; OnPropertyChanged(); } }  
+        #endregion
+
         #region CommandOpenWindow
         public ICommand OpenTrangChuWindow { get; set; }
         public ICommand OpenQuanLyThongTinCaTheWindow { get; set; }
         public ICommand OpenQuanLyLoaiHeo { get; set; }
         public ICommand OpenQuanLyGiongHeo { get; set; }
         public ICommand OpenLapPhieuBanNhapHeoWIndow { get; set; }
-        public ICommand OpenLapLichTiemWindow { get; set; }
-        public ICommand OpenLaplichPhoiGiongWindow { get; set; }
+        public ICommand OpenLapLichTiemWindow { get; set; } 
+        public ICommand OpenLaplichPhoiGiongWindow { get; set; }   
         public ICommand OpenQuanLyThongTinChuongWindow { get; set; }
         public ICommand OpenLapPhieuSuaChuaWindow { get; set; }
         public ICommand OpenQuanLyHangHoaTrongKhoWindow { get; set; }
@@ -40,14 +58,23 @@ namespace QuanLyTraiHeo.ViewModel
         public ICommand OpenBaoCaoThuChiWindow { get; set; }
         public ICommand OpenBaoCaoTonKhoWindow { get; set; }
         public ICommand OpenQuanLyThongTinNhanVienWindow { get; set; }
-        public ICommand OpenTraCuuPhieuThuChiWindow { get; set; }
+        public ICommand OpenQuanLyChucVu { get; set; }
         public ICommand OpenQuanLyNhatKyWindow { get; set; }
         public ICommand OpenThietLapCayMucTieuWindow { get; set; }
+
+        public ICommand OpenCapNhatTaiKhoan { get; set; }
+        public ICommand OpenDoiMatKhau { get; set; }
         #endregion
+
+        #region Event Command
         public ICommand LoadedWindowCommand { get; set; }
+        public ICommand OpenCTThongBao { get; set; }
+        #endregion]
+
         public MainWindowVM()   
         {
             currentWindow = "Trang chủ";
+            
             LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, p => {
                 IsLoaded = true;
                 p.Hide();
@@ -62,6 +89,11 @@ namespace QuanLyTraiHeo.ViewModel
                 if (loginWD.IsLogin)
                 {
                     p.Show();
+
+                    NhanVien = loginWD.NhanVien;
+                    MyImage = CapNhatTaiKhoanVM.BytesToBitmapImage(NhanVien.MyImage);
+
+                    listTHONGBAO = new ObservableCollection<ThongBao>(DataProvider.Ins.DB.ThongBaos.Where(x => x.C_MaNguoiNhan == NhanVien.C_Username));
                 }
                 else
                 {
@@ -69,7 +101,20 @@ namespace QuanLyTraiHeo.ViewModel
                 }
 
             });
-            #region CodeCommandOpenWindow
+
+            CodeCommandOpenWindow();
+            
+        }
+
+        #region Method
+        public void UpdateNhanVien()
+        {
+            OnPropertyChanged("NhanVien");
+            OnPropertyChanged("MyImage");
+        }
+
+        void CodeCommandOpenWindow()
+        {
             OpenTrangChuWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
                 TrangChuWindow wc = new TrangChuWindow();
                 wc.Close();
@@ -125,7 +170,7 @@ namespace QuanLyTraiHeo.ViewModel
                 currentWindow = "Lập lịch tiêm heo";
             });
             OpenLaplichPhoiGiongWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
-                LapLichPhoiGiong wc = new LapLichPhoiGiong();
+                LichPhoiGiongWindow wc = new LichPhoiGiongWindow();
                 wc.Close();
                 Object content = wc.Content;
                 wc.Content = null;
@@ -141,6 +186,15 @@ namespace QuanLyTraiHeo.ViewModel
                 p.Children.Clear();
                 p.Children.Add(content as UIElement);
                 currentWindow = "Quản lý thông tin chuồng nuôi";
+            });
+            OpenLapPhieuSuaChuaWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
+                LapPhieuSuaChuaWindow wc = new LapPhieuSuaChuaWindow();
+                wc.Close();
+                Object content = wc.Content;
+                wc.Content = null;
+                p.Children.Clear();
+                p.Children.Add(content as UIElement);
+                currentWindow = "Lập phiếu sửa chữa";
             });
             OpenQuanLyHangHoaTrongKhoWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
                 QuanLyHangHoaWindow wc = new QuanLyHangHoaWindow();
@@ -205,14 +259,14 @@ namespace QuanLyTraiHeo.ViewModel
                 p.Children.Add(content as UIElement);
                 currentWindow = "Quản lý thông tin nhân viên";
             });
-            OpenTraCuuPhieuThuChiWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
-                TraCuuPhieuThuChiWindow wc = new TraCuuPhieuThuChiWindow();
+            OpenQuanLyChucVu = new RelayCommand<Grid>((p) => { return true; }, p => {
+                Quanlychucvu wc = new Quanlychucvu();
                 wc.Close();
                 Object content = wc.Content;
                 wc.Content = null;
                 p.Children.Clear();
                 p.Children.Add(content as UIElement);
-                currentWindow = "Tra cứu phiếu thu chi";
+                currentWindow = "Quản lý thông tin chức vụ";
             });
             OpenQuanLyNhatKyWindow = new RelayCommand<Grid>((p) => { return true; }, p => {
                 QuanLyNhatKyWindow wc = new QuanLyNhatKyWindow();
@@ -232,9 +286,33 @@ namespace QuanLyTraiHeo.ViewModel
                 p.Children.Add(content as UIElement);
                 currentWindow = "Thiết lập cây mục tiêu";
             });
-            #endregion
 
+            OpenCapNhatTaiKhoan = new RelayCommand<Window>((p) => { return true; }, p => {
+                CapNhatTaiKhoanWindow wc = new CapNhatTaiKhoanWindow();
+                CapNhatTaiKhoanVM capNhatTaiKhoanVM = new CapNhatTaiKhoanVM(this);
+                wc.DataContext = capNhatTaiKhoanVM;
+                wc.ShowDialog();
+
+            });
+
+            OpenDoiMatKhau = new RelayCommand<Window>((p) => { return true; }, p => {
+                DoiMatKhau wc = new DoiMatKhau();
+                DoiMatKhauVM capNhatTaiKhoanVM = new DoiMatKhauVM(this);
+                wc.DataContext = capNhatTaiKhoanVM;
+                wc.ShowDialog();
+
+            });
+
+            OpenCTThongBao = new RelayCommand<Window>((p) => { return true; }, p => {
+                if (selectedItem != null)
+                {
+                    ChitTietThongBaoWindow wc = new ChitTietThongBaoWindow();
+                    ChiTietThongBaoVM vm = new ChiTietThongBaoVM(this);
+                    wc.DataContext = vm;
+                    wc.ShowDialog();
+                }
+            });
         }
-        
+        #endregion
     }
 }

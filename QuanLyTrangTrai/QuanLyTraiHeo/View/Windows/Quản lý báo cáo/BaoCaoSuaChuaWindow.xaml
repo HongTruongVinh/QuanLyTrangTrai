@@ -70,7 +70,7 @@
                         </lvc:PieChart>
                     </StackPanel>
                 </materialDesign:Card>
-
+               
                 <materialDesign:Card Grid.Column="2" Margin="10,0,0,0">
                     <StackPanel Orientation="Vertical">
                         <materialDesign:Card Height="30">
@@ -118,7 +118,7 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition></ColumnDefinition>
                                             <ColumnDefinition></ColumnDefinition>
-
+                                            
                                         </Grid.ColumnDefinitions>
                                         <DatePicker Grid.Column="0"
                                             Width="100"
@@ -183,11 +183,11 @@
                                         Header="Tổng tiền" />
                                     <GridViewColumn DisplayMemberBinding="{Binding Ghichu}"
                                         Header="Ghi chú" />
-
+                                    
                                 </GridView>
                             </ListView.View>
                         </ListView>
-
+                        
                     </StackPanel>
 
                 </materialDesign:Card>
@@ -196,4 +196,3 @@
 
     </Grid>
 </Window>
-

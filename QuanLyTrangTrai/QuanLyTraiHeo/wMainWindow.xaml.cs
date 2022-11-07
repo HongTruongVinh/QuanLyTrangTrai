@@ -1,4 +1,5 @@
 ﻿using QuanLyTraiHeo.View.Windows;
+using QuanLyTraiHeo.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -117,17 +118,7 @@ namespace QuanLyTraiHeo
         {
             CollapsedMenuDtail();
             Tree_menu_detail_NhanVien.Visibility = Visibility.Visible;
-            exp_test.IsExpanded = true;
-            tgl_menu.IsChecked = true;
-            formatMenu();
-            var bc = new BrushConverter();
-            (sender as ListBoxItem).Foreground = Brushes.White;
-            (sender as ListBoxItem).Background = (Brush)bc.ConvertFrom("#41c4ac");
-        }
-        private void MenuPhieuThuChi_Selected(object sender, RoutedEventArgs e)
-        {
-            CollapsedMenuDtail();
-            Tree_menu_detail_TraCuu.Visibility = Visibility.Visible;
+            Tree_menu_detail_ChucVu.Visibility = Visibility.Visible;
             exp_test.IsExpanded = true;
             tgl_menu.IsChecked = true;
             formatMenu();
@@ -167,21 +158,17 @@ namespace QuanLyTraiHeo
             exp_test.IsExpanded = false;
         }
 
-        private void btn_CapNhatMatKhau_Click(object sender, RoutedEventArgs e)
-        {
-            CapNhatTaiKhoanWindow wc = new CapNhatTaiKhoanWindow();
-            wc.ShowDialog();
-        }
-
-        private void btn_DoiMatKhau_Click(object sender, RoutedEventArgs e)
-        {
-            DoiMatKhau wc = new DoiMatKhau();
-            wc.ShowDialog();
-        }
-
         private void btn_TaoThongBao_Click(object sender, RoutedEventArgs e)
         {
             TaoThongBaoWindow wc = new TaoThongBaoWindow();
+            wc.ShowDialog();
+        }
+
+        private void btn_OpenSoDo_Click(object sender, RoutedEventArgs e)
+        {
+            wSoDo wc = new wSoDo();
+            SoDoVM soDoVM = new SoDoVM();
+            wc.DataContext = soDoVM;
             wc.ShowDialog();
         }
     }

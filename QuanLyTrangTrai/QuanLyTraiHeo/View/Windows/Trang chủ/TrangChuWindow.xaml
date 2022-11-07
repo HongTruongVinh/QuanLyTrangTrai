@@ -42,7 +42,7 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-
+                        
                         <StackPanel DockPanel.Dock="Left">
                             <Grid Margin="10">
                                 <Grid.ColumnDefinitions>
@@ -331,7 +331,7 @@
                                                 </DataTemplate>
                                             </GridViewColumn.CellTemplate>
                                         </GridViewColumn>
-
+                                       
                                     </GridView>
                                 </ListView.View>
                             </ListView>

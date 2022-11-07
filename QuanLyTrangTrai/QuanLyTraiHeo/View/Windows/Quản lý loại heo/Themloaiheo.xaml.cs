@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyTraiHeo
+namespace QuanLyTraiHeo.View.Windows.Quản_lý_loại_heo
 {
     /// <summary>
-    /// Interaction logic for TraCuuPhieuThuChiWindow.xaml
+    /// Interaction logic for ThemLoaiHeo.xaml
     /// </summary>
-    public partial class TraCuuPhieuThuChiWindow : Window
+    public partial class ThemLoaiHeo : Window
     {
-        public TraCuuPhieuThuChiWindow()
+        public ThemLoaiHeo()
         {
             InitializeComponent();
         }

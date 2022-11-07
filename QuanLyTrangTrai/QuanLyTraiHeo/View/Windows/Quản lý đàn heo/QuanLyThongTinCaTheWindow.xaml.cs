@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyTraiHeo.View.Windows.Quản_lý_đàn_heo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,30 +13,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyTraiHeo
+namespace QuanLyTraiHeo.View.Windows
 {
-    /// <summary>
-    /// Interaction logic for QuanLyThongTinCaTheWindow.xaml
-    /// </summary>
     public partial class QuanLyThongTinCaTheWindow : Window
     {
         public QuanLyThongTinCaTheWindow()
         {
             InitializeComponent();
-
-            Listview.Items.Add("abc");
-            Listview.Items.Add("cde");
         }
 
-        private void Edit_Selected(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("KKK");
-        }
-
-        private void btn_ThemClick(object sender, RoutedEventArgs e)
-        {
-            ThemSuaTTHeo themSuaTTHeo = new ThemSuaTTHeo();
-            themSuaTTHeo.ShowDialog();
-        }
     }
 }
+

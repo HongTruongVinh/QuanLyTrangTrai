@@ -1,4 +1,4 @@
-﻿<Window x:Class="QuanLyTraiHeo.View.Windows.TaoPhieuKho"
+﻿<Window x:Class="QuanLyTraiHeo.View.Windows.Quản_lý_kho.TaoPhieuKho"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -178,4 +178,3 @@
         </DataGrid>
     </Grid>
 </Window>
-

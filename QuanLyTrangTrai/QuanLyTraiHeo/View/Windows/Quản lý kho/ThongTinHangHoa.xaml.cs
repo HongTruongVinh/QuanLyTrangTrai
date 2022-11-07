@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyTraiHeo.View.Windows
+namespace QuanLyTraiHeo
 {
     /// <summary>
     /// Interaction logic for ThongTinHangHoa.xaml
@@ -22,6 +22,11 @@ namespace QuanLyTraiHeo.View.Windows
         public ThongTinHangHoa()
         {
             InitializeComponent();
+        }
+
+        private void btn_Thoat_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

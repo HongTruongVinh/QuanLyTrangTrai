@@ -321,8 +321,7 @@
                                         <GridViewColumn Header="Khách hàng" />
                                         <GridViewColumn Header="Tổng tiền" />
                                         <GridViewColumn Header="Trạng thái" />
-                                        -->
-    <!--<GridViewColumn Header="Thao tác" Width="120">
+                                        --><!--<GridViewColumn Header="Thao tác" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Menu>
@@ -331,8 +330,7 @@
                                     </Menu>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
-                        </GridViewColumn>-->
-    <!--
+                        </GridViewColumn>--><!--
                                     </GridView>
                                 </ListView.View>
                             </ListView>
