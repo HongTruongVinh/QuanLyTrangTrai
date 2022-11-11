@@ -176,6 +176,9 @@
     </Compile>
     <Compile Include="ViewModel\QL thông tin cá nhân\CapNhatTaiKhoanVM.cs" />
     <Compile Include="ViewModel\QL thông tin cá nhân\DoiMatKhauVM.cs" />
+    <Compile Include="ViewModel\Quản lý nhân viên\NhanVienVM.cs" />
+    <Compile Include="ViewModel\Quản lý nhân viên\SuaNhanVienVM.cs" />
+    <Compile Include="ViewModel\Quản lý nhân viên\ThemNhanVienVM.cs" />
     <Compile Include="View\Windows\Lập lịch\LapLichTiem.xaml.cs">
       <DependentUpon>LapLichTiem.xaml</DependentUpon>
     </Compile>
