@@ -176,6 +176,11 @@
     </Compile>
     <Compile Include="ViewModel\QL thông tin cá nhân\CapNhatTaiKhoanVM.cs" />
     <Compile Include="ViewModel\QL thông tin cá nhân\DoiMatKhauVM.cs" />
+    <Compile Include="ViewModel\Quản lý chuồng\LapPhieuSuaChuaVM.cs" />
+    <Compile Include="ViewModel\Quản lý chuồng\QuanLyThongTinChuongVM.cs" />
+    <Compile Include="ViewModel\Quản lý chuồng\SuaChuongVM.cs" />
+    <Compile Include="ViewModel\Quản lý chuồng\ThemChuongVM.cs" />
+    <Compile Include="ViewModel\Quản lý chuồng\ThemPhieuSuaChuaVM.cs" />
     <Compile Include="ViewModel\Quản lý chức vụ\ChucVuVM.cs" />
     <Compile Include="ViewModel\Quản lý chức vụ\SuaChucVuVM.cs" />
     <Compile Include="View\Windows\Lập lịch\LapLichTiem.xaml.cs">
