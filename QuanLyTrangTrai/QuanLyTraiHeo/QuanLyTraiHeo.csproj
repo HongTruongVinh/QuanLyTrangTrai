@@ -89,6 +89,7 @@
     <Compile Include="Model\CHUCVU.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ChucVuModel.cs" />
     <Compile Include="Model\CHUONGTRAI.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -176,6 +177,7 @@
     </Compile>
     <Compile Include="ViewModel\QL thông tin cá nhân\CapNhatTaiKhoanVM.cs" />
     <Compile Include="ViewModel\QL thông tin cá nhân\DoiMatKhauVM.cs" />
+    <Compile Include="ViewModel\QuanLyNhatKyVM.cs" />
     <Compile Include="ViewModel\Quản lý chuồng\LapPhieuSuaChuaVM.cs" />
     <Compile Include="ViewModel\Quản lý chuồng\QuanLyThongTinChuongVM.cs" />
     <Compile Include="ViewModel\Quản lý chuồng\SuaChuongVM.cs" />
