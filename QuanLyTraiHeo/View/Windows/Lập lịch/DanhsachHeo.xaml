@@ -1,0 +1,200 @@
+﻿<Window x:Name="window" x:Class="QuanLyTraiHeo.View.Windows.Lập_lịch.DanhsachHeo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:QuanLyTraiHeo.View.Windows.Lập_lịch"
+        mc:Ignorable="d"
+        Title="DanhsachHeo" Height="700" Width="886" HorizontalContentAlignment="Stretch" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="270"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="0" Margin="0,0,10,0">
+                <StackPanel Orientation="Vertical">
+                    <materialDesign:Card Height="30">
+                        <TextBlock Grid.Column="0" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0">Chọn chuồng trại cần tiêm</TextBlock>
+                    </materialDesign:Card>
+                    <Grid>
+                        <materialDesign:PackIcon Kind="HoopHouse" Margin="10 15 0 0 "/>
+                        <ComboBox x:Name="MaChuong_CB" materialDesign:HintAssist.Hint="Mã chuồng" Height="30" Margin="30,10,20,11" IsReadOnly="True" SelectionChanged="MaChuong_CB_SelectionChanged"/>
+                    </Grid>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Row="1" Margin="0,20,10,0">
+                <StackPanel Orientation="Vertical">
+                    <materialDesign:Card Height="30">
+                        <TextBlock Grid.Column="0" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0">Thông tin tiêm heo</TextBlock>
+                    </materialDesign:Card>
+                    <Grid>
+                        <materialDesign:PackIcon Kind="Reload" Margin="10 5 0 0 "/>
+                        <TextBox x:Name="LichSuTiem_TB" Margin="30,0,20,11"
+                            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                            VerticalAlignment="Top"
+                            Height="210"
+                            AcceptsReturn="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto"
+                            materialDesign:HintAssist.Hint="Lịch sử tiêm heo"
+                            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+                                 Text="{Binding DiaChi, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Row="3" Margin="0,10,10,0">
+                <StackPanel Orientation="Vertical">
+                    <materialDesign:Card Height="30">
+                        <TextBlock Grid.Column="0" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0">Tra cứu</TextBlock>
+                    </materialDesign:Card>
+                    <Grid>
+                        <materialDesign:PackIcon Kind="QuestionAnswer" Margin="10 15 0 0 "/>
+                        <ComboBox x:Name="TrangThai_CB" materialDesign:HintAssist.Hint="Đã tiêm/Chưa tiêm" Text="" Height="30" Margin="30,10,20,11" IsReadOnly="True" SelectedValuePath="Content" SelectionChanged="TrangThai_CB_SelectionChanged">
+                            <ComboBoxItem x:Name="cbi1">Đã tiêm</ComboBoxItem>
+                            <ComboBoxItem x:Name="cbi2">Chưa tiêm</ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                    <Grid>
+                        <materialDesign:PackIcon Kind="Needle" Margin="10 5 0 0 "/>
+                        <ComboBox x:Name="TiemVacxin_CB" Height="30" Margin="30,0,20,11"
+                                materialDesign:HintAssist.Hint="Thuốc/Vacxin"
+                                  SelectedValuePath="Content"
+                                  IsReadOnly="True" SelectionChanged="TiemVacxin_CB_SelectionChanged">
+                        </ComboBox>
+                    </Grid>
+                    <Grid>
+                        <materialDesign:PackIcon Kind="DateRange" Margin="10 5 0 0 "/>
+                        <TextBox x:Name="tb_TuoiMin" materialDesign:HintAssist.Hint="Ngày tuổi tối thiểu" Height="30" Margin="30,0,20,11" TextChanged="TbTuoiMin_TextChanged" />
+                    </Grid>
+
+                    <Grid>
+                        <materialDesign:PackIcon Kind="DateRange" Margin="10 5 0 0 "/>
+                        <TextBox x:Name="tb_TuoiMax" materialDesign:HintAssist.Hint="Ngày tuổi tối đa" Height="30" Margin="30,0,20,11" TextChanged="TuoiMax_TextChanged" />
+                    </Grid>
+
+                    <Button Margin="20,20,20,0"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Height="30"
+                        BorderBrush="White"
+                        Content="Hoàn tất"
+                        FontSize="16"
+                        Background="#00de1e"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Click="Confirm_button_Click"
+                            >
+
+                    </Button>
+                    <Button Margin="20,10,20,0"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Height="30"
+                        BorderBrush="White"
+                        Content="Huỷ bỏ"
+                        FontSize="16"
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Foreground="#00de1e"
+                        Background="#dcf7e0"
+                        Click="Huy_button_Click"
+>
+
+                    </Button>
+                </StackPanel>
+            </materialDesign:Card>
+
+        </Grid>
+        <Grid Grid.Column="1">
+            <DataGrid x:Name="ListMaHeo_" 
+                          ItemsSource ="{Binding _listChonHeo}"
+                            Grid.Row="1" CanUserAddRows="False"
+                            AutoGenerateColumns="False"
+                            HeadersVisibility="All"                               
+                            SelectionUnit="{Binding ElementName=selectionUnitComboBox, Path=SelectedValue}" Background="White">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn 
+                                                Binding="{Binding IsChecked}" 
+                                                ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
+                                                EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
+                        <DataGridCheckBoxColumn.Header>
+                            <Border
+                                            Background="Transparent">
+                                <CheckBox />
+                            </Border>
+                        </DataGridCheckBoxColumn.Header>
+                        <DataGridCheckBoxColumn.HeaderStyle>
+                            <Style
+                                          TargetType="{x:Type DataGridColumnHeader}"
+                                          BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                                <Setter
+                                            Property="HorizontalContentAlignment"
+                                            Value="Center" />
+                            </Style>
+                        </DataGridCheckBoxColumn.HeaderStyle>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn x:Name="ListMaHeo" Header="Mã heo" 
+                                            Binding="{Binding heo.MaHeo}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="ListTenHeo" Header="Loại heo" 
+                                            Binding="{Binding heo.LOAIHEO.TenLoaiHeo}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Tuoi" Header="Tuổi" 
+                                            Binding="{Binding ShowTuoi}" IsReadOnly="True"/>
+                    <DataGridTemplateColumn x:Name="Trangthai" Header="Trạng thái" IsReadOnly="True">
+
+                    </DataGridTemplateColumn>
+                    <!--GridViewColumn Header="" Width="160">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Menu>
+                                            <MenuItem x:Name="check" Icon="{materialDesign:PackIcon Kind=Check}"  Width="48" Click="check_click"/>
+                                        </Menu>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn-->
+                </DataGrid.Columns>
+                <DataGrid.ItemContainerStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <EventSetter Event="UIElement.PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
+                        <EventSetter Event="UIElement.PreviewMouseLeftButtonUp" Handler="ListViewItem_PreviewMouseLeftButtonUp" />
+                    </Style>
+                </DataGrid.ItemContainerStyle>
+            </DataGrid>
+            <DataGrid x:Name="ListMaHeo1_" 
+                          ItemsSource ="{Binding _listChonHeo}"
+                            Grid.Row="1" CanUserAddRows="False"
+                            AutoGenerateColumns="False"
+                            HeadersVisibility="All"                               
+                            SelectionUnit="{Binding ElementName=selectionUnitComboBox, Path=SelectedValue}" Background="White">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="ListMaHeo1" Header="Mã heo" 
+                                            Binding="{Binding heo.MaHeo}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="ListTenHeo1" Header="Loại heo" 
+                                            Binding="{Binding heo.LOAIHEO.TenLoaiHeo}" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="Tuoi1" Header="Tuổi" 
+                                            Binding="{Binding ShowTuoi}" IsReadOnly="True"/>
+                    <DataGridTemplateColumn x:Name="Trangthai1" Header="Trạng thái" IsReadOnly="True">
+
+                    </DataGridTemplateColumn>
+                    <!--GridViewColumn Header="" Width="160">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Menu>
+                                            <MenuItem x:Name="check" Icon="{materialDesign:PackIcon Kind=Check}"  Width="48" Click="check_click"/>
+                                        </Menu>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn-->
+                </DataGrid.Columns>
+                <DataGrid.ItemContainerStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <EventSetter Event="UIElement.PreviewMouseLeftButtonDown" Handler="ListViewItem1_PreviewMouseLeftButtonDown" />
+                        <EventSetter Event="UIElement.PreviewMouseLeftButtonUp" Handler="ListViewItem1_PreviewMouseLeftButtonUp" />
+                    </Style>
+                </DataGrid.ItemContainerStyle>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

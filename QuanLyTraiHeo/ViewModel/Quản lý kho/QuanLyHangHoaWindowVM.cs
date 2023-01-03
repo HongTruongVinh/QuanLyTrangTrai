@@ -1,0 +1,200 @@
+﻿using QuanLyTraiHeo.Model;
+using QuanLyTraiHeo.View.Windows.Quản_lý_kho;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Documents;
+using System.Windows.Input;
+using ListView = System.Windows.Controls.ListView;
+
+namespace QuanLyTraiHeo.ViewModel
+{
+    public class QuanLyHangHoaWindowVM : BaseViewModel
+    {
+        public ObservableCollection<HANGHOA> listHangHoa { get; set; }
+        public HANGHOA SelectedHangHoa { get; set; }
+        public ObservableCollection<TinhTrangHangHoaModel> listTinhTrang { get; set; }
+        public ObservableCollection<LoaiHangHoaModel> listLoaiHangHoa { get; set; }
+        public int listviewSelectedIndex { get; set; }
+        public string textTimKiem { get; set; }
+        public int textDonGiaToiThieu { get; set; }
+        public int textDonGiaToiDa { get; set; }
+        public string textSoLuongToiThieu { get; set; }
+        public string textSoLuongToiDa { get; set; }
+        public ICommand ThemHangHoaCommand { get; set; }
+        public ICommand EditCommand { get; set; }
+        public ICommand TextTimKiemChangeCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
+        public ICommand DongiatoithieuChangeCommand { get; set; }
+        public ICommand DongiatoidaChangeCommand { get; set; }
+        public ICommand SoluongtoithieuChangeCommand { get; set; }
+        public ICommand SoluongtoidaChangeCommand { get; set; }
+
+        public QuanLyHangHoaWindowVM()
+        {
+            textTimKiem = "";
+            listHangHoa = new ObservableCollection<HANGHOA>(DataProvider.Ins.DB.HANGHOAs);
+            listLoaiHangHoa = new ObservableCollection<LoaiHangHoaModel>();
+            listTinhTrang = new ObservableCollection<TinhTrangHangHoaModel>();
+            listviewSelectedIndex = 0;
+            textDonGiaToiThieu = DataProvider.Ins.DB.HANGHOAs.Select(x => x.DonGia).Min().Value;
+            textDonGiaToiDa = DataProvider.Ins.DB.HANGHOAs.Select(x => x.DonGia).Max().Value;
+            ThemHangHoaCommand = new RelayCommand<Window>((p) => { return true; }, p => { ThemHangHoa(p); });
+            EditCommand = new RelayCommand<Window>((p) => {
+                if (SelectedHangHoa == null)
+                    return false;
+                else return true; ; }, p => { Edit(p); });
+            DeleteCommand = new RelayCommand<Window>((p) => { return true; }, p => { Delete(p); });
+            TextTimKiemChangeCommand = new RelayCommand<ListView>((p) => { return true; }, p => { TextTimKiemChanged(p); });
+            DongiatoithieuChangeCommand = new RelayCommand<ListView>((p) => { return true; }, p => { DongiatoithieuChanged(p); });
+            DongiatoidaChangeCommand = new RelayCommand<ListView>((p) => { return true; }, p => { DongiatoidaChanged(p); });
+            SoluongtoithieuChangeCommand = new RelayCommand<ListView>((p) => { return true; }, p => { SoluongtoithieuChanged(p); });
+            SoluongtoidaChangeCommand = new RelayCommand<ListView>((p) => { return true; }, p => { SoluongtoidaChanged(p); });
+            LoadListLoaiHangHoa();
+            LoadListTinhTrang();
+        }
+
+        private void Delete(Window p)
+        {
+            if (SelectedHangHoa.CT_PHIEUHANGHOA.Count() > 0 || SelectedHangHoa.CT_PHIEUKIEMKHO.Count() > 0)
+            {
+                MessageBox.Show("Không thể xoá hàng hoá này. Vì đang tồn tại trong phiếu?", "Chú ý");
+                return;
+            }
+            MessageBoxResult result = MessageBox.Show("Bạn có chắc chắn xoá ?", "Cảnh báo", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
+            {
+                DataProvider.Ins.DB.HANGHOAs.Remove(SelectedHangHoa);
+                listHangHoa.Remove(SelectedHangHoa);
+                DataProvider.Ins.DB.SaveChanges();
+
+            }
+        }
+
+        private void LoadListLoaiHangHoa()
+        {
+            listLoaiHangHoa.Clear();
+            var listloaihanghoa = from c in DataProvider.Ins.DB.HANGHOAs
+                                  select new { c.LoaiHangHoa };
+            var listloaihanghoanodupes = listloaihanghoa.Distinct().ToList();
+            foreach (var items in listloaihanghoanodupes)
+            {
+                listLoaiHangHoa.Add(new LoaiHangHoaModel(true, items.LoaiHangHoa));
+            }
+
+        }
+
+        private void SoluongtoidaChanged(ListView p)
+        {
+            LoadListHangHoa();
+        }
+
+        private void SoluongtoithieuChanged(ListView p)
+        {
+            LoadListHangHoa();
+        }
+
+        private void DongiatoidaChanged(ListView p)
+        {
+            LoadListHangHoa();
+        }
+
+        private void DongiatoithieuChanged(ListView p)
+        {
+            LoadListHangHoa();
+        }
+
+        private void LoadListTinhTrang()
+        {
+            listTinhTrang.Clear();
+            var listtinhtrang = from c in DataProvider.Ins.DB.HANGHOAs
+                                select new { c.TinhTrang };
+            var listtinhtrangnodupes = listtinhtrang.Distinct().ToList();
+            foreach (var items in listtinhtrangnodupes)
+            {
+                listTinhTrang.Add(new TinhTrangHangHoaModel(true, items.TinhTrang));
+            }
+        }
+
+        private void LoadListHangHoa()
+        {
+            
+            listHangHoa.Clear();
+            var listhanghoa = DataProvider.Ins.DB.HANGHOAs.Where(s => s.TenHangHoa.Contains(textTimKiem)).ToList();
+            listhanghoa = listhanghoa.Where(s => s.DonGia <= textDonGiaToiDa).ToList();
+            listhanghoa = listhanghoa.Where(s => s.DonGia >= textDonGiaToiThieu).ToList();
+
+            if (!string.IsNullOrWhiteSpace(textSoLuongToiThieu))
+            {
+                listhanghoa = listhanghoa.Where(s => s.SoLuongTonKho >= int.Parse(textSoLuongToiThieu)).ToList();
+            }
+            if (!string.IsNullOrWhiteSpace(textSoLuongToiDa))
+            {
+                listhanghoa = listhanghoa.Where(s => s.SoLuongTonKho <= int.Parse(textSoLuongToiDa)).ToList();
+            }
+
+
+            foreach (var items in listhanghoa.ToList())
+            {
+                int flag = 0;
+                foreach (var items2 in listLoaiHangHoa)
+                {
+                    if (items2.isSelected == false)
+                        if (items.LoaiHangHoa == items2.loaiHangHoa)
+                        {
+                            flag = 1;
+                            break;
+                        }
+                }
+                if (flag != 0)
+                    listhanghoa.Remove(items);
+            }
+            foreach (var items in listhanghoa.ToList())
+            {
+                int flag = 0;
+                foreach (var items2 in listTinhTrang)
+                {
+                    if (items2.isSelected == false)
+                        if (items.TinhTrang == items2.tinhTrang)
+                        {
+                            flag = 1;
+                            break;
+                        }
+                }
+                if (flag != 0)
+                    listhanghoa.Remove(items);
+            }
+            foreach (var items in listhanghoa)
+            {
+                listHangHoa.Add(items);
+            }
+        }
+
+        private void TextTimKiemChanged(ListView p)
+        {
+            LoadListHangHoa();
+        }
+
+        private void ThemHangHoa(Window p)
+        {
+            ThemHangHoawindow themhanghoa = new ThemHangHoawindow();
+            themhanghoa.ShowDialog();
+            LoadListHangHoa();
+        }
+
+        private void Edit(Window p)
+        {
+            if (listviewSelectedIndex < 0)
+                return;
+            ThongTinHangHoaVM thongTinHangHoaVM = new ThongTinHangHoaVM(listHangHoa[listviewSelectedIndex]);
+            ThongTinHangHoa thongTinHangHoa = new ThongTinHangHoa();
+            thongTinHangHoa.DataContext = thongTinHangHoaVM;
+            thongTinHangHoa.ShowDialog();
+            LoadListHangHoa();
+        }
+    }
+}

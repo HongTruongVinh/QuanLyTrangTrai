@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7d809ae07e24614a296b77b448afffe" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.BAOCAOTONKHO" Width="1.5" PointX="12.75" PointY="19.5" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.CHUCVU" Width="1.5" PointX="3" PointY="11.375" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.CHUONGTRAI" Width="1.5" PointX="5.25" PointY="6.125" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.CT_PHIEUHANGHOA" Width="1.5" PointX="12.75" PointY="8.375" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.CT_PHIEUHEO" Width="1.5" PointX="12.75" PointY="11.375" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.CT_PHIEUKIEMKHO" Width="1.5" PointX="9.75" PointY="28.375" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.CT_PHIEUSUACHUA" Width="1.5" PointX="9.75" PointY="15.375" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.DOITAC" Width="1.5" PointX="5.25" PointY="16.125" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.GIONGHEO" Width="1.5" PointX="8.25" PointY="1.375" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.HANGHOA" Width="1.5" PointX="10.5" PointY="7" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.HEO" Width="1.5" PointX="10.5" PointY="1.25" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.LICHCHUONG" Width="1.5" PointX="7.5" PointY="7" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.LICHPHOIGIONG" Width="1.5" PointX="12.75" PointY="14.75" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.LICHTIEMHEO" Width="1.5" PointX="12.75" PointY="4.625" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.ListActionDetail" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.LOAICHUONG" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.LOAIHEO" Width="1.5" PointX="8.25" PointY="3.875" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.MuaDichBenh" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.NHANVIEN" Width="1.5" PointX="5.25" PointY="9.75" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.PERMISION" Width="1.5" PointX="0.75" PointY="12.875" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.PERMISION_DETAIL" Width="1.5" PointX="3" PointY="16.25" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.PHIEUHANGHOA" Width="1.5" PointX="10.5" PointY="10.875" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.PHIEUHEO" Width="1.5" PointX="7.5" PointY="11" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.PHIEUKIEMKHO" Width="1.5" PointX="7.5" PointY="28.25" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.PHIEUSUACHUA" Width="1.5" PointX="7.5" PointY="15" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.QuyDinhTiemHeo" Width="1.5" PointX="12.75" PointY="1.75" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.THAMSO" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TRANGTRAINUOIHEOModel.ThongBao" Width="1.5" PointX="7.5" PointY="24.75" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_BCTK_HH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CV_P" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_NV_MCV" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_MC" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PSC_MC" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_H_CT" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_LC_MC" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PHH_MHH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PHH_SP" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PH_MH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PH_SP" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PKK_MHH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PKK_SP" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_CT_PSC_SP" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PH_MDT" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PHH_MDT" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PSC_MDT" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_H_MGH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_QDTH_HH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_H_MLH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_LPG_MHC" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_LPG_MHD" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_LTH_MH" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_LC_MNL" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_LC_MNT" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PH_MNV" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PHH_MNV" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PHH_MNVN" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PKK_MNV" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PSC_MNV" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_TB_NG" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_TB_NN" />
+        <AssociationConnector Association="TRANGTRAINUOIHEOModel.FK_PD_P" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
